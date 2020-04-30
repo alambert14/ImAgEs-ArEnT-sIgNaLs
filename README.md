@@ -6,6 +6,9 @@ And henceforth, sound!
 Sampled rows -> tambre (waveform)
 Sampled columns -> envelope
 
+![Row 50](row_50.png "row 50")
+![Row_1000](row_1000.png "row 1000")
+
 ### Note
 HSV Color clustering
 H -> [Pitch](https://www.flutopedia.com/sound_color.htm)

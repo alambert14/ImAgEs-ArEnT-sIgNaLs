@@ -12,7 +12,7 @@ from scipy import signal
 img = cv2.imread("example_image.jpg")
 img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-first_row = img[1000:1001,][0]
+first_row = img[50:51,][0]
 #first_row = np.concatenate((first_row, first_row, first_row))
 
 first_row = np.add(first_row, -np.mean(first_row), casting="unsafe")
@@ -48,5 +48,5 @@ print(freq_in_hertz)
 fourier = np.absolute(fft(first_row)) / 10000
 print fourier
 plt.plot(first_row)
-plt.plot(sampled)
+#plt.plot(sampled)
 plt.show()
