@@ -9,6 +9,8 @@ Sampled columns -> envelope
 ![Row 50](row_50.png "row 50")
 ![Row_1000](row_1000.png "row 1000")
 
+Examples of wave forms from the 50th and 1000th rows of an image, respectively (notice how they can be very different?)
+
 ### Note
 HSV Color clustering
 H -> [Pitch](https://www.flutopedia.com/sound_color.htm)
