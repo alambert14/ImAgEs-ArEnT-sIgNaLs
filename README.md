@@ -4,7 +4,9 @@ And henceforth, sound!
 ## Current scheme:
 ### Instrument
 Sampled rows -> tambre (waveform)
+
 Sampled columns -> envelope
+
 
 ![Row 50](row_50.png "row 50")
 
