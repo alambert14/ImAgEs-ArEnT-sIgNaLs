@@ -4,7 +4,9 @@ And henceforth, sound!
 ## Current scheme:
 ### Instrument
 Sampled rows -> tambre (waveform)
+
 Sampled columns -> envelope
+
 
 ![Row 50](row_50.png "row 50")
 
@@ -13,7 +15,7 @@ Sampled columns -> envelope
 Examples of wave forms from the 50th and 1000th rows of an image, respectively (notice how they can be very different?)
 
 ### Note
-HSV Color clustering
+HSV Color [K-Means Clustering](https://www.pyimagesearch.com/2014/05/26/opencv-python-k-means-color-clustering/)
 
 H -> [Pitch](https://www.flutopedia.com/sound_color.htm)
 
