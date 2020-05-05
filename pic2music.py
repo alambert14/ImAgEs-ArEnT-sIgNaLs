@@ -19,7 +19,7 @@ first_row = np.add(first_row, -np.mean(first_row), casting="unsafe")
 
 first_row *= 15#np.std(first_row)
 sampled = signal.resample(first_row, int(len(first_row)*(2000/44100)))
-data = np.tile(sampled, 1000)
+data = sampled#np.tile(sampled, 1000)
 print(data)
 #samples = (np.sin(2*np.pi*np.arange(44100*1)*440/44100)).astype(np.float32)
 obj = wave.open('sound.wav','w')
