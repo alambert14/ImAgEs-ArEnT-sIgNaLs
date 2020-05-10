@@ -29,7 +29,7 @@ For the composition, I plan to average the pixels across the columns of a sectio
 
 Each section will pull from a default of 7 pitches representing the 7 most dominant hues in the section of the image. I found the most dominant colors in the HSV colorspace by using [K-Means Clustering](https://www.pyimagesearch.com/2014/05/26/opencv-python-k-means-color-clustering/).
 
-![Example of k-means clustering](image_histogram_example.png "histogram example")
+![Example of k-means clustering](image_histogram_example2.png "histogram example")
 
 Example of the most dominant colors from each section of an image
 

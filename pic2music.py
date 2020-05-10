@@ -23,8 +23,8 @@ class MusicalPicture(object):
         print("Initializing image: {}\n......................".format(filename))
         self.image = cv2.imread(filename)
         print("Image loaded!")
-        self.width = self.image.shape[0]
-        self.height = self.image.shape[1]
+        self.width = self.image.shape[1]
+        self.height = self.image.shape[0]
         self.num_sections = num_sections
         self.sections = self.generate_sections() # List of len num_sections
         self.dominant_colors = self.find_dominant_colors() # List of tuples, len num_sections (frequency, hue, saturation, value)
@@ -64,10 +64,10 @@ class MusicalPicture(object):
         sections = []
         section_size = self.width//self.num_sections
         for i in range(self.num_sections-1):
-            new_section = self.image[i*section_size:(i+1)*section_size,:,:]
+            new_section = self.image[:,i*section_size:(i+1)*section_size,:]
             sections.append(new_section)
         # The last section will likely be different width
-        sections.append(self.image[(self.num_sections-1)*section_size:,:,:].astype(np.uint8))
+        sections.append(self.image[:,(self.num_sections-1)*section_size:,:].astype(np.uint8))
         return sections
 
     
@@ -89,10 +89,10 @@ class MusicalPicture(object):
         grayscale = grayscale.reshape((grayscale.shape[0], grayscale.shape[1]))
         averaged = np.mean(grayscale, axis=1)
         averaged = np.add(averaged, -np.mean(averaged), casting="unsafe")
-        averaged *= 514
+        averaged *= 256
         sampled = averaged
-        #sampled = signal.resample(averaged.astype(np.float64), int(len(averaged)*(len(averaged)/MusicalPicture.SAMPLE_RATE)))
-
+        #sampled = signal.resample(averaged.astype(np.float64), int(len(averaged)))#*3000/MusicalPicture.SAMPLE_RATE))
+        sampled = np.tile(sampled, len(averaged))
         dir_name = "section_{}".format(section_number)
 
         try:
